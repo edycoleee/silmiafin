@@ -10,9 +10,6 @@ import { FaUserDoctor } from "react-icons/fa6";
 function Menu() {
   return (
     <div className="h-screen flex flex-col items-center">
-      {/* <div className="bg-cover bg-center background-image: url('../assets/wayang.svg') z-10">
-        <img className="max-h-screen w-[550px] object-cover mix-blend-overlay" src={wayang} alt="" />
-      </div> */}
       <div className="m-20 flex flex-col items-center justify-center">
         <h3 className="py-3 text-5xl md:text-5xl font-bold">Selamat Datang Di ABIYASA</h3>
         <h3 className=" text-xl font-bold">ABIYASA membantu untuk mendeteksi kemampuan kognitif anda dan memberikan beberapa program latihan untuk meningkatkan kemampuan kognitif anda.</h3>
