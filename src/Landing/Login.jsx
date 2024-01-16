@@ -9,10 +9,6 @@ function Login() {
   //2. Ambil function signup dari useAuth
 
   //3. fungsion Login
-  function onSIgnin() {
-    console.log("Fungsi SIGNIN")
-    // signup(emailRef.current.value, passwordRef.current.value)
-  }
   const Masuk = () => {
     navigate("/menu");
   }
@@ -31,7 +27,7 @@ function Login() {
         <h3 className="font-bold m-3">Lupa Sandi?</h3>
       </div>
       <div className="flex flex-col items-center justify-center m-[50px]">
-        <button onClick={() => Masuk} className="w-[225px] py-2 bg-[#202020] hover:bg-[#272727] rounded-lg text-white" onClick={() => onSIgnin()}>Masuk</button>
+        <button onClick={() => Masuk()} className="w-[225px] py-2 bg-[#202020] hover:bg-[#272727] rounded-lg text-white">Masuk</button>
         <img className="mt-5 w-[150px]" src={people} alt="" />
       </div>
       <div className="flex">
