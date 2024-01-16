@@ -1,4 +1,4 @@
-### Firebase Setting====================================================
+### Firebase Setting=============================
 
 [LinkFirebase](https://console.firebase.google.com/project/silmiafin1/settings/general/web:ZWE1MjZiYTgtOWY1My00YWI0LTgyMmMtYjFlMDkwYTdhZDVl)
 
@@ -53,19 +53,20 @@ firebase init
 
 Lakukan setelah firebase init
 
-- Are you ready to proceed ? press ‘y’ (Yes)
-- Which Firebase features do you want to set up for this directory?
-  (From the options come to the option
-  “Hosting: Configure files for Firebase Hosting”.
-  Now press ‘space bar’. You will see the option is marked with a star mark (\*).
-  Now press ‘Enter’.
-  Now you may be asked for set up Github Action deploys, complete them.
-- Project Setup : You have to choose the project of your firebase. Choose your project.
-- Hosting Setup : (Here is one important part)
-- Configure as a single-page app (rewrite all urls to /index.html)? (Yes)
-- Set up automatic builds and deploys with GitHub? (No)
-- Optional, if you have already done npm run build then you must already have the index.html file
-  then you will be asked : File dist/index.html already exists. Overwrite? (Yes)
+Now you will enter the firebase tools shell and will be asked a few questions :
+
+Are you ready to proceed ? press ‘y’ (Yes)
+Which Firebase features do you want to set up for this directory? (From the options come to the option “Hosting: Configure files for Firebase Hosting”. Now press ‘space bar’. You will see the option is marked with a star mark (\*). Now press ‘Enter’.
+Now you may be asked for set up Github Action deploys, complete them.
+Project Setup : You have to choose the project of your firebase. Choose your project.
+Hosting Setup : (Here is one important part)
+You will be asked to set your public directory? It may be suggesting “public” but don’t select it. As you are using Vite, you have to write “dist” (this will be created after building our project, which consists another index.html)
+
+Then comes the following set of questions,
+
+Configure as a single-page app (rewrite all urls to /index.html)? (Yes)
+Set up automatic builds and deploys with GitHub? (No)
+Optional, if you have already done npm run build then you must already have the index.html file then you will be asked : File dist/index.html already exists. Overwrite? (Yes)
 
 Untuk deploy ke hosting > ONLINE
 Lakukan perintah di Terminal
@@ -83,7 +84,12 @@ New Repository > edycoleee/silmiafin > Public > Create repository
 COPY semua Perintah
 
 ```js
-Git add .
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/edycoleee/silmiafin.git
+git push -u origin main
 //dst
 ```
 
