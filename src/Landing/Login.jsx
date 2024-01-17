@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import lamp from '../assets/lamp.svg'
 import people from '../assets/people.svg'
 
@@ -10,7 +10,7 @@ function Login() {
 
   //3. fungsion Login
   const Masuk = () => {
-    navigate("/menu");
+    navigate("/syarat");
   }
   return (
     <div className=" h-screen bg-[#F0D064] flex flex-col items-center">
@@ -31,8 +31,8 @@ function Login() {
         <img className="mt-5 w-[150px]" src={people} alt="" />
       </div>
       <div className="flex">
-        <h3 className="m-3">Tidak Punya Akun?</h3>
-        <h3 className="m-3 text-gray">Buat Akun Baru</h3>
+        <h3 className="m-2">Tidak Punya Akun?</h3>
+        <Link to="/register" className="m-2 text-white">Buat Akun Baru</Link>
       </div>
     </div>
   )

@@ -1,4 +1,10 @@
+import { useNavigate } from "react-router-dom";
+
 function Syarat() {
+  const navigate = useNavigate();
+  const Daftar = () => {
+    navigate("/menu");
+  }
   return (
     <div className="h-full bg-[#F0D064] flex flex-col items-center">
       <div className="m-10">
@@ -19,7 +25,7 @@ function Syarat() {
           <input type="checkbox" className="mr-2 size-5" />
           <label>Saya telah membaca dan atas semua point dalam Syarat dan Ketentuan ini.</label>
         </div>
-        <button className="w-[250px] m-10 py-2 bg-[#202020] hover:bg-[#272727] rounded-lg text-white">Daftar</button>
+        <button onClick={() => Daftar()} className="w-[250px] m-10 py-2 bg-[#202020] hover:bg-[#272727] rounded-lg text-white">Daftar</button>
       </div>
     </div>
   )
