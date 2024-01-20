@@ -7,6 +7,7 @@ import { HiComputerDesktop } from "react-icons/hi2";
 import { HiHome } from "react-icons/hi2";
 import { FaUserDoctor } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
+import ModalYaTidak from "./ModalYaTidak";
 
 function Menu() {
   const navigate = useNavigate();
@@ -37,7 +38,7 @@ function Menu() {
           <h3 className="mt-3 text-1xl font-bold text-white">Pendidikan Kesehatan</h3>
         </div>
       </div>
-      <button onClick={() => Keluar()} className="w-[250px] m-10 py-2 bg-[#202020] hover:bg-[#272727] rounded-lg text-white">Keluar</button>
+      <ModalYaTidak />
       <div className="mt-10 w-full bg-[#F0D064] flex items-center justify-around">
         <FaUserDoctor className="size-10 m-5" />
         <HiHome className="size-10 m-5" />
