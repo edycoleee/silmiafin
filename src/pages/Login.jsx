@@ -2,19 +2,39 @@ import { Link, useNavigate } from 'react-router-dom';
 import lamp from '../assets/lamp.svg'
 import people from '../assets/people.svg'
 import { useRef, useState } from 'react';
+import { useAuth } from '../authentication/AuthContext';
 
 function Login() {
   const email = useRef()
   const password = useRef()
+  const passwordConfirm = useRef()
+  const navigate = useNavigate();
+  const { login } = useAuth()
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
-  const navigate = useNavigate()
-  const Lanjutkan = () => {
-    navigate("/syarat")
+
+  async function showError(message) {
+    setError(message);
+    setTimeout(function () {
+      setError("");
+    }, 3000);
   }
+
   async function handleSubmit() {
-    console.log("email :", email.current.value, "password :", password.current.value)
+    console.log(email.current.value, password.current.value, passwordConfirm.current.value);
+
+    try {
+      setError("")
+      setLoading(true)
+      await login(email.current.value, password.current.value, passwordConfirm.current.value)
+      //navigate('/syarat')
+    } catch (e) {
+      showError(e.message)
+      console.log(e.message, email.current.value, password.current.value, passwordConfirm.current.value)
+    }
+    setLoading(false)
   }
+
   return (
     <div className=" h-screen bg-[#F0D064] flex flex-col items-center">
       <div className="flex flex-col items-center justify-center">
@@ -23,6 +43,7 @@ function Login() {
         <h2 className="text-2xl md:text-4xl font-bold mt-1">Masuk :</h2>
         <input className="w-[300px] p-2 mt-4 rounded-md" placeholder="Email" type="email" ref={email} />
         <input className="w-[300px] p-2 mt-2 rounded-md" placeholder="Password" type="password" ref={password} />
+        <input className="w-[300px] p-2 mt-2 rounded-md" placeholder="Password Confrim" type="password" ref={passwordConfirm} />
       </div>
       <div className="flex">
         <h3 className="m-3">Ingat Email</h3>

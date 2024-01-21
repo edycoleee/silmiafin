@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom"
 import Landing from "./Landing/Landing"
-import Login from "./Landing/Login"
+import Login from "./pages/Login"
 import Menu from "./Landing/Menu"
 import Register from "./pages/Register"
 import Syarat from "./Landing/Syarat"
