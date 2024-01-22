@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom"
 import { useAuth } from "../authentication/AuthContext";
+import { Accordion, AccordionContent, AccordionPanel, AccordionTitle } from "flowbite-react";
 
 function Register() {
   const nama = useRef()
@@ -25,7 +26,7 @@ function Register() {
     console.log("nama :", nama.current.value, "email :", email.current.value, "password :", password.current.value, "tanggal :", tanggalLahir.current.value)
     //1. Cek password = password confirm
     if (password.current.value !== passwordConfirm.current.value) {
-      return showError("error")
+      return showError("Password do not match")
     }
 
     //2. Perintah signup >> AuthContext
@@ -39,7 +40,6 @@ function Register() {
       console.log(e.message, email.current.value, password.current.value);
     }
     setLoading(false)
-
   }
 
   return (
@@ -61,9 +61,35 @@ function Register() {
         <h3 className="text-1xl font-bold m-1">Tanggal Lahir :</h3>
         <input className="w-[300px] p-2 m-1 rounded-md" type="date" ref={tanggalLahir} />
       </div>
-
-
+      <Accordion collapseAll>
+        <AccordionPanel>
+          <AccordionTitle className="bg-[#dddddd]">Syarat & ketentuan</AccordionTitle>
+          <AccordionContent className="bg-white">
+            <div className="h-full flex flex-col items-center">
+              <div>
+                <div className="max-w-[1240px] mx-auto rounded-lg bg-[#e7e7e7]">
+                  <ul className="m-10 py-5">
+                    <li className="md:text-xl ">1. Program, aplikasi dan layanan di ABIYASA saat ini disediakan dalam bahasa Indonesia.</li>
+                    <li className="md:text-xl mt-1">2. Ditujukan bagi Warga Negara Indonesia (WNI).</li>
+                    <li className="md:text-xl mt-1">3. Setiap member yang sudah terdaftar dan terverifikasi di ABIYASA disebut sebagai member ABIYASA.</li>
+                    <li className="md:text-xl mt-1">4. Setiap member yang sudah bergabung di ABIYASA secara otomatis menyetujui Syarat dan Ketentuan serta Kebijakan yang berlaku.</li>
+                    <li className="md:text-xl mt-1">5. ABIYASA melindungi data pribadi member (seperti source code dari skrip yang tidak ingin dibagikan kepada orang lain, database, atau data-data di direktori home member yang tidak ingin dapat dilihat oleh user lain).</li>
+                    <li className="md:text-xl mt-1">6. Perjanjian ini telah dibaca oleh member sebelum layanan diberikan dan telah disetujui dengan mencentang kotak tanda member telah membaca dan setuju atas semua point dalam Syarat dan Ketentuan ini.</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="flex flex-col items-center justify-center">
+                <div className="flex items-center ml-4">
+                  <input type="checkbox" className="mr-2 size-5" />
+                  <label>Saya telah membaca dan atas semua point dalam Syarat dan Ketentuan ini.</label>
+                </div>
+              </div>
+            </div>
+          </AccordionContent>
+        </AccordionPanel>
+      </Accordion>
       <button type="submit" onClick={() => handleSubmit()} className="w-[225px] mt-10 py-2 bg-[#202020] hover:bg-[#272727] rounded-lg text-white">Lanjutkan</button>
+      <p style={{ color: "white", backgroundColor: "red", paddingLeft: "10px" }} className="m-5">{error}</p>
     </div>
   )
 }

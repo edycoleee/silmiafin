@@ -3,6 +3,8 @@ import lamp from '../assets/lamp.svg'
 import people from '../assets/people.svg'
 import { useRef, useState } from 'react';
 import { useAuth } from '../authentication/AuthContext';
+import { Toast, ToastToggle } from 'flowbite-react';
+import { HiExclamation } from 'react-icons/hi';
 
 function Login() {
   const email = useRef()
@@ -12,16 +14,20 @@ function Login() {
   const { login } = useAuth()
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
-
   async function showError(message) {
     setError(message);
     setTimeout(function () {
       setError("");
     }, 3000);
   }
-
   async function handleSubmit() {
+
     console.log(email.current.value, password.current.value, passwordConfirm.current.value);
+
+    //Chek password == passwordconfirm
+    if (password.current.value !== passwordConfirm.current.value) {
+      return showError("Password do not match")
+    }
 
     try {
       setError("")
@@ -57,6 +63,15 @@ function Login() {
         <h3 className="m-2">Tidak Punya Akun?</h3>
         <Link to="/register" className="m-2 text-white">Buat Akun Baru</Link>
       </div>
+      {error !== "" &&
+        <Toast>
+          <div className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-orange-100 text-orange-500 dark:bg-orange-700 dark:text-orange-200">
+            <HiExclamation className="h-5 w-5" />
+          </div>
+          <div className="ml-3 text-sm font-normal">{error}</div>
+          <ToastToggle />
+        </Toast>
+      }
     </div>
   )
 }
