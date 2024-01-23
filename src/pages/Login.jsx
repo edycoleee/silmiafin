@@ -33,7 +33,7 @@ function Login() {
       setError("")
       setLoading(true)
       await login(email.current.value, password.current.value, passwordConfirm.current.value)
-      //navigate('/syarat')
+      navigate('/menu')
     } catch (e) {
       showError(e.message)
       console.log(e.message, email.current.value, password.current.value, passwordConfirm.current.value)
