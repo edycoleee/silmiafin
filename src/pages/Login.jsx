@@ -55,14 +55,6 @@ function Login() {
         <h3 className="m-3">Ingat Email</h3>
         <h3 className="font-bold m-3">Lupa Sandi?</h3>
       </div>
-      <div className="flex flex-col items-center justify-center m-[50px]">
-        <button onClick={() => handleSubmit()} className="w-[225px] py-2 bg-[#202020] hover:bg-[#272727] rounded-lg text-white">Masuk</button>
-        <img className="mt-5 w-[150px]" src={people} alt="" />
-      </div>
-      <div className="flex">
-        <h3 className="m-2">Tidak Punya Akun?</h3>
-        <Link to="/register" className="m-2 text-white">Buat Akun Baru</Link>
-      </div>
       {error !== "" &&
         <Toast>
           <div className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-orange-100 text-orange-500 dark:bg-orange-700 dark:text-orange-200">
@@ -72,6 +64,14 @@ function Login() {
           <ToastToggle />
         </Toast>
       }
+      <div className="flex flex-col items-center justify-center m-5">
+        <button onClick={() => handleSubmit()} className="w-[225px] py-2 bg-[#202020] hover:bg-[#272727] rounded-lg text-white">Masuk</button>
+        <img className="mt-5 w-[150px]" src={people} alt="" />
+      </div>
+      <div className="flex">
+        <h3 className="m-2">Tidak Punya Akun?</h3>
+        <Link to="/register" className="m-2 text-white">Buat Akun Baru</Link>
+      </div>
     </div>
   )
 }

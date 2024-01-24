@@ -1,10 +1,10 @@
 function LengkapiBiodata() {
   return (
     <div className="h-screen flex flex-col items-center bg-[#F0D064]">
-      <div className="m-[50px] flex flex-col items-center justify-center">
-        <h3 className="text-5xl font-bold mt-5">Halo, silahkan lengkapi Biodata anda.</h3>
+      <div className="m-10 flex flex-col items-center justify-center">
+        <h3 className="text-4xl font-bold ">Halo, silahkan lengkapi Biodata anda.</h3>
       </div>
-      <div className="mt-10 flex flex-col">
+      <div className="flex flex-col">
         <h3 className="text-1xl font-bold m-1">Nama Lengkap:</h3>
         <input className="w-[300px] p-2 m-1 rounded-md" type="text" />
       </div>

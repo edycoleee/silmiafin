@@ -11,9 +11,6 @@ import ModalYaTidak from "./ModalYaTidak";
 
 function Menu() {
   const navigate = useNavigate();
-  const Keluar = () => {
-    navigate("/");
-  }
   return (
     <div className="h-screen flex flex-col items-center">
       <div className="m-5 flex flex-col items-center justify-center">
@@ -21,11 +18,11 @@ function Menu() {
         <h3 className="text-xl font-bold">ABIYASA membantu untuk mendeteksi kemampuan kognitif anda dan memberikan beberapa program latihan untuk meningkatkan kemampuan kognitif anda.</h3>
       </div>
       <div className="grid md:grid-cols-2 gap-1 px-2 text-center">
-        <div className="border w-[200px] h-[125px] rounded-lg shadow-xl bg-black flex flex-col items-center justify-center">
+        <div onClick={() => navigate("/menu/biodata")} className="border w-[200px] h-[125px] rounded-lg shadow-xl bg-black flex flex-col items-center justify-center">
           <BsMenuButtonWide className="text-orange-500 size-7 " />
-          <h3 className="mt-3 text-1xl font-bold text-white">Biodata</h3>
+          <h3 className="mt-3 text-1xl font-bold text-white" >Biodata</h3>
         </div>
-        <div className="border w-[200px] h-[125px] rounded-lg shadow-xl bg-black flex flex-col items-center justify-center">
+        <div onClick={() => navigate("/menu/pengkajiankog")} className="border w-[200px] h-[125px] rounded-lg shadow-xl bg-black flex flex-col items-center justify-center">
           <BsAspectRatio className="text-orange-500 size-7 w-10 " />
           <h3 className="mt-3 text-1xl font-bold text-white">Pengkajian Kognitif</h3>
         </div>

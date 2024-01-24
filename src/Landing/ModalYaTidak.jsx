@@ -1,14 +1,12 @@
 import { Button, Modal } from 'flowbite-react';
 import { useState } from 'react';
-import { HiOutlineExclamationCircle } from 'react-icons/hi';
-import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../authentication/AuthContext';
 
 function ModalYaTidak() {
   const [openModal, setOpenModal] = useState(false);
-  const navigate = useNavigate();
+  const { logout } = useAuth()
   const Keluar = () => {
-    setOpenModal(false)
-    navigate("/");
+    logout()
   }
   return (
     <>

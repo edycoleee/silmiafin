@@ -14,9 +14,6 @@ function Register() {
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
-  const Lanjutkan = () => {
-    navigate("/syarat")
-  }
   async function showError(message) {
     setError(message);
     setTimeout(function () {
