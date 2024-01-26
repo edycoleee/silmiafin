@@ -26,11 +26,11 @@ function Menu() {
           <BsAspectRatio className="text-orange-500 size-7 w-10 " />
           <h3 className="mt-3 text-1xl font-bold text-white">Pengkajian Kognitif</h3>
         </div>
-        <div className="border w-[200px] h-[125px] rounded-lg shadow-xl bg-black flex flex-col items-center justify-center">
+        <div onClick={() => navigate("/menu/latkog")} className="border w-[200px] h-[125px] rounded-lg shadow-xl bg-black flex flex-col items-center justify-center">
           <HiComputerDesktop className="text-orange-500 size-7 w-10 " />
           <h3 className="mt-3 text-1xl font-bold text-white">Latihan Kognitif</h3>
         </div>
-        <div className="border w-[200px] h-[125px] rounded-lg shadow-xl bg-black flex flex-col items-center justify-center">
+        <div onClick={() => navigate("/menu/pendidikankesehatan")} className="border w-[200px] h-[125px] rounded-lg shadow-xl bg-black flex flex-col items-center justify-center">
           <BsBook className="text-orange-500 size-7 w-10 " />
           <h3 className="mt-3 text-1xl font-bold text-white">Pendidikan Kesehatan</h3>
         </div>

@@ -10,13 +10,13 @@ function PendidikanKesehatan() {
   return (
     <div className="flex flex-col items-center">
       <div className="flex flex-col items-center justify-center">
-        <h3 className="text-5xl font-bold m-10">Pandidikan Kesehatan</h3>
+        <h3 className="text-4xl font-bold m-5">Pandidikan Kesehatan</h3>
       </div>
       <div className="flex flex-col items-center justify-center">
-        <div>
-          <img src={dapur} alt="" />
-          <h3>Tips Mengolah Makanan Bagi Penderita Kolestrol Tinggi</h3>
-          <button>Baca Artikel</button>
+        <div className="m-3 border rounded-lg shadow-xl bg-[#e0e0e0] flex flex-col items-center justify-center h-[325px] w-[400px]">
+          <img src={dapur} alt="" className="mt-5" />
+          <h3 className="text-1xl font-bold m-5">Tips Mengolah Makanan Bagi Penderita Kolestrol Tinggi</h3>
+          <button className="w-[200px] py-2 bg-[#202020] hover:bg-[#272727] rounded-lg text-white">Baca Artikel</button>
         </div>
         <div>
           <img src={pantai} alt="" />
