@@ -5,14 +5,16 @@ import { MdOutlinePeopleAlt } from "react-icons/md";
 import { PiBrain } from "react-icons/pi";
 import { IoMdPeople } from "react-icons/io";
 import { MdSearch } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 function LatihanKognitif() {
+  const navigate = useNavigate();
   return (
     <div className="h-screen flex flex-col items-center">
       <div className="m-5 max-w-[1100px] flex flex-col items-center justify-center bg-[#F0D064] rounded-lg">
         <h3 className="text-4xl font-bold m-5">Halo, Ayo lalukan latihan kognitif secara berkala.</h3>
       </div>
-      <div className="grid md:grid-cols-2 gap-1 px-2 text-center">
+      <div onClick={() => navigate("/menu/latkog/latkon")} className="grid md:grid-cols-2 gap-1 px-2 text-center">
         <div className="border w-[200px] h-[125px] rounded-lg shadow-xl bg-[#F0D064] flex flex-col items-center justify-center">
           <MdOutlinePeopleAlt className="text-gray-900 size-7" />
           <h3 className="mt-3 text-1xl font-bold">Latihan Konsentrasi</h3>
