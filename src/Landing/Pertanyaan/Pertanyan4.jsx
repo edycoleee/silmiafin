@@ -2,7 +2,7 @@ import { BiSolidMessageRoundedDetail } from "react-icons/bi";
 import { HiHome } from "react-icons/hi2";
 import { FaUserDoctor } from "react-icons/fa6";
 
-function Pertanyan() {
+function Pertanyan4() {
   return (
     <div className="flex flex-col items-center">
       <div className="m-[50px] flex flex-col items-center justify-center">
@@ -20,4 +20,4 @@ function Pertanyan() {
   )
 }
 
-export default Pertanyan
+export default Pertanyan4
